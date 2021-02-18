@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_16_224255) do
+ActiveRecord::Schema.define(version: 2021_02_18_190554) do
 
   create_table "articles", charset: "utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -20,7 +20,22 @@ ActiveRecord::Schema.define(version: 2021_02_16_224255) do
     t.string "title"
   end
 
+  create_table "chefs", charset: "utf8mb4", force: :cascade do |t|
+    t.string "chefname"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "comments", charset: "utf8mb4", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipes", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.text "summary"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
